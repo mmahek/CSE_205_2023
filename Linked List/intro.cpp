@@ -6,5 +6,6 @@
 //doublee linked list:
 // its node has 3 pointers and 1 data, 1st pointer points towards the previous node and second pointer points towards next node.
 //the 2nd pointer of last node points towards  null
-//circular linked list
+//singly circular linked list
 // this is same as singly just the lastnode's pointer points towards the address
+//
