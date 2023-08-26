@@ -37,12 +37,21 @@ void insertAtTail(Node *&head, int val)
         head = n;
         return;
     }
-    Node *temp = head;
+    Node *temp = head;//iterate temp to find the desired node
     while (temp->next != NULL)
     { //-> arrow operator
         temp = temp->next;
     }
     temp->next = n; // n is new node
+}
+void deleteLL(Node *&head, int val){//remove the node
+    Node *temp = head;//creating a temp pointer as we donot need head to traverse
+    while(temp->next->data == val){//till data of next of temp is not equal to desired value
+        temp = temp->next;
+    }
+    Node *toDelete = temp -> next;//storing the value of data of node just before the desired value in a variable
+    temp->next = temp->next->next;//making connection among the node before and after the node to be deleted so that the link is not lost
+    delete toDelete;//deleting the value stored in pointer as required
 }
 
 void insertAtHead(Node *&head, int val)
