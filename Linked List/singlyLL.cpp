@@ -14,21 +14,6 @@ public:
     }
 };
 
-void check(Node *&head, int what)
-{
-    Node *temp = head; // pointer in memory for changing its value and traversing through the linked list
-    // cout << "what :" ;
-    // cin >> what;
-    while (temp != NULL)
-    {
-        if (temp->data == what) // data of node
-        {
-            cout << "True" << endl;
-        }
-        temp = temp->next; // otherwise, go to next node
-    }
-}
-
 void insertAtTail(Node *&head, int val)
 { // created a pointer variable and passed the value by reference because we want to make changes to the original linked list
     Node *n = new Node(val);
@@ -46,7 +31,11 @@ void insertAtTail(Node *&head, int val)
 }
 void deleteLL(Node *&head, int val){//remove the node
     Node *temp = head;//creating a temp pointer as we donot need head to traverse
-    while(temp->next->data == val){//till data of next of temp is not equal to desired value
+    if(head == NULL){//edge case: no node is present further thus pointer points to NULL. hence no need to do anything thus return.
+        return;//the code will not move forward
+    }
+    while (temp->next != NULL && temp->next->data == val)
+    { // till data of next of temp is not equal to desired value
         temp = temp->next;
     }
     Node *toDelete = temp -> next;//storing the value of data of node just before the desired value in a variable
@@ -60,17 +49,55 @@ void insertAtHead(Node *&head, int val)
     n->next = head; // connection is made by pointing the
     head = n;
 }
-
 void display(Node *head)
 {
     Node *temp = head;
 
     while (temp != NULL)
     {
-        cout << temp->data << "->";
+        if (temp != head)
+        {
+            cout << "->";
+        }
+        cout << temp->data;
         temp = temp->next;
     }
 }
+
+// void display(Node *head)
+// {
+//     Node *temp = head;
+
+//     while (temp != NULL)
+//     {
+//         cout << temp->data << "->";
+//         temp = temp->next;
+//     }
+// }
+
+void deletionAtHead(Node* &head, int val){
+    //Node *temp = head;
+    Node *toDelete = head;//storing the value of head in another variable so that i can deletee it later after shift
+    head= head->next;//shifting the head to its next value
+    delete toDelete;//deleting the value as required
+
+}
+
+void check(Node *&head, int what)
+{
+    Node *temp = head; // pointer in memory for changing its value and traversing through the linked list
+    // cout << "what :" ;
+    // cin >> what;
+    while (temp != NULL)
+    {
+        if (temp->data == what) // data of node
+        {
+            cout << "True" << endl;
+        }
+        temp = temp->next; // otherwise, go to next node
+    }
+}
+
 int main()
 {
     Node *head = NULL; // empty linked list created
@@ -79,7 +106,25 @@ int main()
     //  insertAtTail(head, 2);//new node has been created in memory
     insertAtTail(head, 1);
     insertAtTail(head, 2);
-    insertAtHead(head, 10);
+    insertAtTail(head, 3);
+    insertAtTail(head, 4);
+    insertAtTail(head, 5);
+    insertAtHead(head, 6);
+    insertAtTail(head, 9);
+
     display(head);
+
+    cout << endl;
+
     check(head, 2);
+
+    deleteLL(head, 3);
+
+    display(head);
+
+    cout<< endl;
+    
+    deletionAtHead(head, 6);
+    display(head);
 }
+//if head is deleted, whole linked list will be lost
