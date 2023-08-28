@@ -94,14 +94,22 @@ int main()
             cout << "Array is already full!" << endl;
         }
         else
-        {
+        {   //this algorithm is necessary when the array is sorted, hence order is fixed and thus no changes can be made in position of number
+        //time complexity becomes theta(n)[worst case, where n is the size of array],
+        //theta(1) [best case, when element is inserted at last of array, no shifting required] or 
+        //theta(n-p)[average case, where n is size of array and p is postion at which element needs to be inserted]
             // Shift elements to make room for the new element
-            for (int i = size ; i >= pos; i--) // i = size as element at size -1 was being overwritten before it was shifted, thus it becomes garbage. 
+            for (int i = size ; i >= pos; i--) // i = size as element at size -1 was being overwritten before it was shifted, thus it becomes garbage.  
             {
                 a[i] = a[i - 1];
             }
             a[pos - 1] = num; // Insert the new number
             size++;           // Increase the size of the array
+
+            //following is done when no sorting or order is necessary for the array.
+            // a[size] = a[pos-1];
+            // a[pos -1]=  num;
+            // size++;
         }
     }
 
