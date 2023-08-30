@@ -112,6 +112,7 @@ void insertionAtTail(Node *&head, int val)
     temp->next = n;
     n->prev = temp;
 }
+//deletion operation in doubly linked list
 
 void display(Node *head)
 {

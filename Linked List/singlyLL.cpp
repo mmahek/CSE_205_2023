@@ -24,7 +24,7 @@ void insertAtTail(Node *&head, int val)
     }
     Node *temp = head;//iterate temp to find the desired node
     while (temp->next != NULL)
-    { //-> arrow operator
+    { // -> arrow operator
         temp = temp->next;
     }
     temp->next = n; // n is new node
