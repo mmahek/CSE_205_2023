@@ -8,6 +8,10 @@
 //the 2nd pointer of last node points towards  null
 //singly circular linked list
 // this is same as singly just the lastnode's pointer points towards the address
+
+
+//doubly circular linked list
+//
 //shortlist 50 jobs and see the skills required for them, atleast 50 % skills would be same and hence get hands down experience on them.
 // this effort will be an edge for me.
 //kuch karne par hi kuch hoga.

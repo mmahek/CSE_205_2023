@@ -126,5 +126,6 @@ int main()
     
     deletionAtHead(head, 6);
     display(head);
+    
 }
 //if head is deleted, whole linked list will be lost
