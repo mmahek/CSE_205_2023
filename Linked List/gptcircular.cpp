@@ -70,7 +70,22 @@ Node *floydDetectLoop(Node *head)
             return slow;
         }
     }
-    return 0;
+    return NULL;
+}
+
+Node* getStartingNode(Node* head){
+    if(head== NULL){
+        return NULL:
+    }
+    Node* intersection = floydDetectLoop(Node* head);
+    Node* slow = head;
+
+    while(slow != intersection){
+        slow = slow -> next;
+        intersection = intersection -> next;
+    }
+    return slow;
+
 }
 
 int main()
