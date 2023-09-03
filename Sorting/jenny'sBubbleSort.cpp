@@ -33,9 +33,9 @@ int main()
                 flag = 1;
             }
         }
-        if (flag == 0)//modification is needed when in  any pass no swapping occurs or not required thus array is sorted hence no requore ment of more pass
-        {          // when the array is already sorted and no more comparisions are needed thus reduce the iterations of outer loop i.e. leading to more optimization
-            break; // move the control out of for loop and no more comparisions are made.
+        if (flag == 0) // modification is needed when in  any pass no swapping occurs or not required thus array is sorted hence no requore ment of more pass
+        {              // when the array is already sorted and no more comparisions are needed thus reduce the iterations of outer loop i.e. leading to more optimization
+            break;     // move the control out of for loop and no more comparisions are made.
         }
     }
     cout << "Bubble Sorted Array is : [";
@@ -45,5 +45,6 @@ int main()
     }
     cout << "]";
 }
-// Time complexity: Best case : O(n)
-// Worst Case: O(n^2)
+// Time complexity: Best case (already sorted): O(n)
+// Worst Case (array arranged in decending order): O(n^2+1-2n) i.e. O(n^2) 
+ 
