@@ -13,6 +13,21 @@ public:
         next = NULL;
     }
 };
+void deleteLL(Node *&head, int val)
+{                      // remove the node
+    Node *temp = head; // creating a temp pointer as we donot need head to traverse
+    if (head == NULL)
+    {           // edge case: no node is present further thus pointer points to NULL. hence no need to do anything thus return.
+        return; // the code will not move forward
+    }
+    while (temp->next != NULL && temp->next->data == val)
+    { // till data of next of temp is not equal to desired value
+        temp = temp->next;
+    }
+    Node *toDelete = temp->next;   // storing the value of data of node just before the desired value in a variable
+    temp->next = temp->next->next; // making connection among the node before and after the node to be deleted so that the link is not lost
+    delete toDelete;               // deleting the value stored in pointer as required
+}
 
 void insertAtTail(Node *&head, int val)
 { // created a pointer variable and passed the value by reference because we want to make changes to the original linked list
@@ -29,19 +44,6 @@ void insertAtTail(Node *&head, int val)
     }
     temp->next = n; // n is new node
 }
-void deleteLL(Node *&head, int val){//remove the node
-    Node *temp = head;//creating a temp pointer as we donot need head to traverse
-    if(head == NULL){//edge case: no node is present further thus pointer points to NULL. hence no need to do anything thus return.
-        return;//the code will not move forward
-    }
-    while (temp->next != NULL && temp->next->data == val)
-    { // till data of next of temp is not equal to desired value
-        temp = temp->next;
-    }
-    Node *toDelete = temp -> next;//storing the value of data of node just before the desired value in a variable
-    temp->next = temp->next->next;//making connection among the node before and after the node to be deleted so that the link is not lost
-    delete toDelete;//deleting the value stored in pointer as required
-}
 
 void insertAtHead(Node *&head, int val)
 {
@@ -56,9 +58,7 @@ void display(Node *head)
     while (temp != NULL)
     {
         if (temp != head)
-        {
-            cout << "->";
-        }
+        {cout << "->";}
         cout << temp->data;
         temp = temp->next;
     }

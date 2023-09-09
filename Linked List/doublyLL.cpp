@@ -36,7 +36,7 @@
 //         insertAtHead(head, val);
 //         return;
 //     }
-    
+
 //     Node *temp = head;
 //     while (temp->next != NULL) //
 //     {                          //-> arrow operator
@@ -54,7 +54,7 @@
 //     {
 //         cout << temp->data << "->";
 //         temp = temp->next;
-        
+
 //     }
 // }
 // int main()
@@ -112,7 +112,7 @@ void insertionAtTail(Node *&head, int val)
     temp->next = n;
     n->prev = temp;
 }
-//deletion operation in doubly linked list
+// deletion operation in doubly linked list
 
 void display(Node *head)
 {
