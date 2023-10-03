@@ -47,8 +47,9 @@ void insertAtTail(Node *&head, int val)
 
 void insertAtHead(Node *&head, int val)
 {
-    Node *n = new Node(val);
-    n->next = head; // connection is made by pointing the
+    Node *n = new Node(val);//new node created named n
+    n->next = head;//next of n points to head   
+    // connection is made by pointing the
     head = n;
 }
 void display(Node *head)
