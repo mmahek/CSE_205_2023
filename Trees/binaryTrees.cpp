@@ -11,10 +11,38 @@ class Node{
     //constructor
     Node(int val){
         data = val;
-        left = NULL:
+        left = NULL;
         right = NULL;
     }
 };
+
+void postOrder(Node *root)
+{ // left  root  right
+    if (root == NULL)
+        return;
+
+    postOrder(root->left);
+    postOrder(root->right);
+}
+
+void inOrder(Node* root){// left  root  right
+    if (root == NULL)
+        return;
+
+    inOrder(root->left);
+    cout << root->data << " ";   
+    inOrder(root->right);
+}
+
+//Preorder Traversal
+void preOrder(Node* root){// Root  left  right
+    //base case: reached the end of branch
+    if(root == NULL) return;
+
+    cout << root->data << " ";
+    preOrder(root->left);
+    preOrder(root->right);
+}
 
 int main(){
     Node* root = new Node(1);//root node created, first circle, currently, left and right pointer of this node points to NULL
@@ -26,5 +54,18 @@ int main(){
     root -> right -> left = new Node(6);//child of node 3 at left
     root -> right -> right = new Node(7);// child of node 3 at right
 
+    //traversal of tree
+    cout << "The traversal of tree by PreOrder: ";
+    preOrder(root);
+
+    cout << endl;
+
+    cout << "The traversal of tree by InOrder: ";
+    inOrder(root);
+
+    cout << endl;
+
+    cout << "The traversal of tree by PostOrder: ";
+    postOrder(root);
     return 0;
 }
