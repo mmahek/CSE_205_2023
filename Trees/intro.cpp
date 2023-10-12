@@ -15,5 +15,5 @@ Descendent Nodes : Children of child nodes are called descendent nodes
 
 */
 /*
-    - Binary Tree - a tree with each node have at most 2 children.
+    - Binary Tree - a tree with each node have at most 2 children i.e. it can have 0, 1 or 2 children.
 */

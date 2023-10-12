@@ -56,3 +56,5 @@ int main(){
     printLevelOrder(root);
     return 0;
 }
+/*
+just like for binary search, array must be sorted i.e. it is a rule, binary search tree also needs to follow certain rules*/
