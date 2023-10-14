@@ -27,7 +27,7 @@ void postOrder(Node *root)
     postOrder(root->right);
 }
 
-void inOrder(Node *root)
+void inOrder(Node *root)//comes in sorted manner
 { // left  root  right
     if (root == NULL)
         return;
