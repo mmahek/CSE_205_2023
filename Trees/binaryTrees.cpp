@@ -19,12 +19,13 @@ public:
 };
 
 void postOrder(Node *root)
-{ // left  root  right
+{ // left  right  root
     if (root == NULL)
         return;
 
     postOrder(root->left);
     postOrder(root->right);
+    cout << root->data << " ";
 }
 
 void inOrder(Node *root)//comes in sorted manner
