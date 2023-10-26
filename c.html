@@ -1,0 +1,624 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<script src="/js/idb-keyval.min.js"></script>
+<script>
+    var __rd_url = "https://myclass.lpu.in/";
+    if (window.parent !== window) {
+        try {
+            // in iframe or frame
+            console.log(window.top.location.href); // triggers error in case of a malicious clickjacking attempt
+            if (window.parent.location.pathname === '/secure/tla/jnr.jsp') {
+                // parent is jnr
+                window.parent.location.href = window.location.href;
+            } else if (window.parent.location.pathname === '/secure/take-test1.jsp') {
+                if (window.location.pathname === '/secure/tla/lvmt.jsp' && typeof window.parent["cnarm"] === 'function') {
+                    window.parent.cnarm(false, true);
+                }
+            }
+        } catch (e) {
+            try {
+                window.top.location.href = window.location.href; // let's try to reset top, fails in html5
+            } catch (e1) {
+                window.addEventListener('load', function () {
+                    document.querySelector('body').innerHTML = '<p style="font-size: 3rem; line-height: 2; margin-top: 3rem; text-align: center"><mark>This website is maliciously trying to embed CodeTantra.com inside a frame.<br/><br/>This is likely a clickjacking attack. Please notify support@codetantra.com with a complete screenshot.</mark></p>';
+                });
+            }
+        }
+    }
+    try {
+        idbKeyval.update('ctcu', function (oldVal) {
+            var newVal = { "id" : "63159451db103b06ba4acb00", "loginId" : "12212106.st@lpu.in", "name" : "Mahek .", "memberId" : "12212106", "ch" : "1392", "k" : { "id" : "123", "pub" : "N1cIGMTgc4Ide8mG2jYcwSxgdzYfDExzx4WmSoZqVQE=" } };
+            return newVal;
+        });
+    } catch (ignore) {
+    }
+</script>
+
+<script src="/js/custom-min/ipc.min.js"></script>
+
+<script>
+    window.ipcN && window.ipcN.send({type: 'version'}).then(function (version) {
+        if (version !== "2.0.1") {
+            var downloadLinksAndLatestVersion = { "windows" : "https://github.com/ct-code/sea/releases/download/v2.0.1/CodeTantra.SEA.Setup.2.0.1.exe" , "linux" : "https://github.com/ct-code/sea/releases/download/v2.0.1/codetantra-sea_2.0.1_amd64.deb" , "mac" : "https://github.com/ct-code/sea/releases/download/v2.0.1/CodeTantra.SEA-2.0.1-universal.dmg" , "android" : "https://play.google.com/store/apps/details?id=com.codetantra.seam"};
+            downloadLinksAndLatestVersion.latestVersion = "2.0.1";
+            window.ipcN.send({type: "update", payload: downloadLinksAndLatestVersion});
+        }
+    }).catch(window.ipcW.handle);
+
+    window._ctReloadPage = function () {
+        window.location.href = window.location.href.replace(/#.*$/, '');
+    }
+</script>
+
+
+
+
+<head>
+    
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link href="/css/bootstrap-latest.css" rel="stylesheet">
+<link href="/css/label-style.css" rel="stylesheet">
+<link href="/css/custom-styles.css" rel="stylesheet">
+<link href="/css/bs-docs-side-nav.css" rel="stylesheet">
+<link href="/css/latest_header_styles.css" rel="stylesheet">
+<link href="/css/tablesorter/theme.bootstrap.css" rel="stylesheet">
+<link href="/css/jquery-ui.css" rel="stylesheet">
+<link href="/css/tablesorter/theme.jui.css" rel="stylesheet">
+<link href="/css/bootstrap-datepicker.css" rel="stylesheet">
+<link href="/css/bootstrap-slider.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="/css/alertify-latest.css">
+<link type="text/css" rel="stylesheet" href="/css/select2-latest.css">
+<link type="text/css" rel="stylesheet" href="/css/dataTables.bootstrap4.css">
+<link type="text/css" rel="stylesheet" href="/css/dataTables.fixedColumns.bootstrap4.css">
+<link type="text/css" rel="stylesheet" href="/css/bootstrap-switch-latest.css">
+<link type="text/css" rel="stylesheet" href="/css/font-awesome.min.css">
+<link type="text/css" rel="stylesheet" href="/css/offline-theme-chrome-indicator.css">
+<link rel="stylesheet" href="/css/mathquill.min.css">
+<link type="text/css" rel="stylesheet" href="/css/bootstrap4-toggle.min.css">
+
+<script src="/js/jquery-latest.js"></script>
+<script src="/js/jquery.validate-latest.js"></script>
+<script src="/js/modernizr-2.6.2.min.js"></script>
+<script src="/js/bootstrap.bundle.js"></script>
+<script src="/js/bootstrap-notify.js"></script>
+<script src="/js/jquery-ui-all.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/d3.js"></script>
+<script src="/js/function-plot.js"></script>
+
+<script src="/js/custom-min/nommoc.min.js"></script>
+
+<script src="/js/common-on-ready-js-methods.js"></script>
+<script src="/js/bootstrap-datepicker.js"></script>
+<script src="/js/search-table-row-popup.js"></script>
+<script src="/js/bootstrap-slider-latest.js"></script>
+<script src="/js/jquery.numeric.js"></script>
+<script src="/js/underscore-latest.js"></script>
+<script src="/js/hr.js"></script>
+<script src="/js/alertify-latest.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/select2-latest.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/bootstrap.touchspin.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/jquery.dataTables.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/dataTables.tableTools.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/dataTables.bootstrap4.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/bootstrap-switch-latest.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/form2object.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/gs/TweenMax.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/gs/circular-preloader.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/ace/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/bootstrap4-toggle.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    ace.require("ace/ext/language_tools");
+</script>
+<script src="/js/mathquill.min.js"></script>
+<script>
+    MathJax = {
+        startup: {
+            typeset: false
+        },
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            macros: {
+                degree: '^\\circ'
+            }
+        },
+        svg: {
+            fontCache: 'global'
+        },
+        options: {
+            enableMenu: false,
+            ignoreHtmlClass: 'ignore-math',
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true,
+                width: "container"
+            }
+        }
+    };
+</script>
+<script id="MathJax-script" src="/js/mjax/tex-mml-chtml.js"></script>
+
+    
+
+
+<script src="/js/gs/circular-preloader.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/gs/TweenMax.min.js" type="text/javascript" charset="utf-8"></script>
+
+
+<script src="/js/custom-min/lg.min.js"></script>
+
+<script>
+    var supportEmail = 'support.myclasses@lpu.co.in';
+    var supportPhone = '[ "01824-517-450"]';
+    supportPhone = JSON.parse(supportPhone);
+    var _ct_cookieId = '63159451db103b06ba4acb00';
+    var _ct_lid = '12212106.st@lpu.in';
+    var _ct_uname = "Mahek" ;
+    var _ct_groups = [ { "6315a4b3655849075aab3770" : "K22PTINT108"} , { "6315a4b4655849075aab382d" : "K22PTINT108-G1"} , { "639afb36d50c5e269ca927a3" : "K22PTINT108-G1-Odd"} , { "64c4909301fbd206938a55b3" : "KS001CSE202"} , { "64c4909301fbd206938a55b4" : "KS001CSE202-G1"} , { "64c4909301fbd206938a55b5" : "KS001CSE205"} , { "64c4909301fbd206938a55b6" : "KS001CSE205-G1"} , { "64fedc37c85b5906ce7246b7" : "KS001CSE20223241"} , { "64fedc37c85b5906ce7246b8" : "KS001CSE20223241-G1"} , { "64fedc37c85b5906ce7246b9" : "KS001CSE20523241"} , { "64fedc37c85b5906ce7246ba" : "KS001CSE20523241-G1"} , { "651f8c739f7f024b9f1afa7e" : "ETP_7th Oct 2023_25263_23393_09:00-13:00 PM"}];
+    var forceLocation = false;
+    var isCurrentRoleMember = true;
+    var _ct_chid = '1392';
+    var _zl_config = { }
+</script>
+
+
+<style>
+    li > a {
+        cursor: pointer;
+    }
+    .border-style {
+        line-height: 30px;
+        border: 2px solid gray;
+        padding: 2px;
+        border-radius: 4px;
+    }
+    .alertify-notifier .ajs-message {
+        width:450px;
+        color: white;
+        font-weight: bold;
+    }
+    .alertify-notifier.ajs-right .ajs-message.ajs-visible {
+        right: 450px;
+        top: 50px;
+        border-radius: 6px;
+    }
+    .alertify-notifier .ajs-message.ajs-error {
+        background: red;
+    }
+    .alertify-notifier .ajs-message.ajs-success {
+        background: rgba(92,184,17,.9);
+    }
+    .alertify-notifier .ajs-message.ajs-warning {
+        background: rgb(248, 165, 0);
+    }
+    #supportDialogBody {
+        background-color: cornsilk;
+    }
+    .select2-results__option[aria-selected="true"]{
+        display: none;
+    }
+</style>
+<script>
+    $(function () {
+        'use strict';
+        $('[data-toggle="offcanvas"]').on('click', function () {
+            $('.offcanvas-collapse').toggleClass('open')
+        })
+    })
+</script>
+<!-- Fixed navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark d-block d-print-none" id='cssmenu'>
+    <button class="navbar-toggler py-0 border-0" type="button" data-toggle="offcanvas" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <span class="navbar-brand d-lg-none d-print-none"><img src="https://s3.ap-south-1.amazonaws.com/ct-client-logos/logos/lovelyprofessionaluniversity" alt="CodeTantra" style="max-width: 100%; height: 30px;" /></span>
+    <span class="d-none text-right bg-transparent"><img src="/img/logo-new.png" alt="CodeTantra" style="max-width: 100%;" /></span>
+    <div class="navbar-collapse offcanvas-collapse" id="navbarSupportedContent">
+            
+                
+<ul class="navbar-nav mr-auto">
+    <li class='d-none d-lg-block'>
+        <span class="p-1 d-block">
+             <img src="https://s3.ap-south-1.amazonaws.com/ct-client-logos/logos/lovelyprofessionaluniversity" style="height: 30px;" alt="Home">
+        </span>
+    </li>
+    <li class="nav-item"><a class="nav-link" href='/secure/home.jsp' style="white-space: nowrap"><i class="fa fa-home"></i><span> Home</span> </a></li>
+    
+    
+    <li class='nav-item dropdown'><a class="nav-link dropdown-toggle" data-toggle="dropdown" href='#' role="menu" aria-haspopup="true" title="Learn anywhere" aria-label="Learn anywhere menu"><span>Learn Anywhere</span></a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/secure/tla/m.jsp" role="menuitem" title="View meetings" aria-label="Click to view meetings">View Meetings</a></li>
+        </ul>
+    </li>
+    
+    
+</ul>
+
+            
+            <ul class="navbar-nav ml-md-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> 12212106.st@lpu.in </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href='/secure/member-profile.jsp'><span>Update Profile</span> </a></li>
+                        
+                    </ul>
+                </li>
+                
+                <li class="nav-item"><a class="nav-link" id="contactHelp" href='#' onclick="openSupportDialog()" role="contentinfo"><span>Support</span> </a></li>
+                <li class="nav-item"><a class="btn btn-sm btn-danger" id="logoutBtn" style="color: white; font-weight: bold; margin-top: 0.25rem; white-space: nowrap " role="button" aria-label="Logout" title="Click to logout"> Logout <i class="fa fa-sign-out" aria-hidden="true"></i> </a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+</nav>
+<script>
+    $(document).attr('cssBodyWidth', 0);
+
+    
+    $(document).ready(function() {
+        initiateSupportPanel(supportEmail, supportPhone, "<div><h5 class=\"btn btn-info\">Regular</h5><h6 class=\"text-success font-weight-bold\"><span><i class=\"fa fa-phone-square\" aria-hidden=\"true\"></i> 01824-520150 </span></h6><div><h6><i class=\"fa fa-envelope\" aria-hidden=\"true\"></i> Visit UMS &amp; follow the path: <br>UMS Navigation &rarr; RMS &rarr; Log Request <br>(Select Category “Online Classes”)</h6></div></div><div><h5 class=\"btn btn-info\">Distance Education</h5><h6 class=\"text-success font-weight-bold\"><span><i class=\"fa fa-phone-square\" aria-hidden=\"true\"></i> 01824-521360 </span><br><span><i class=\"fa fa-phone-square\" aria-hidden=\"true\"></i> 01824-520151 </span></h6><div><h6><i class=\"fa fa-envelope\" aria-hidden=\"true\"></i> Visit LPU e-connect &amp; follow the path: <br>RMS &rarr; Log Request <br>(Select Category “MY Class”)</h6></div></div><div><h5 class=\"btn btn-info\">Online Education</h5><h6 class=\"text-success font-weight-bold\"><span><i class=\"fa fa-phone-square\" aria-hidden=\"true\"></i> 01824-520500 </span></h6></div>");
+        if (forceLocation && !window.lgOverridden) {
+            $(".img-info").html("<b>Note</b> : You can click on the image to view a larger version.");
+            geoLocationCoordinates();
+        }
+
+        setTimeout(function(){
+            if (typeof hideTafPopup != 'undefined' && hideTafPopup) {
+                $('#tafPopupImg').addClass('hide');
+            } else {
+                $('#tafPopupImg').addClass('in');
+            }
+        }, 1000);
+        var $cssmenu = $('#cssmenu');
+        
+
+        $("#logoutBtn").click(function() {
+            logoutClicked();
+        });
+
+        $(".changeRole").click(function() {
+            changeRoleClicked(this);
+        });
+
+    });
+
+    if (window['alertify']) {
+        alertify.set('notifier', 'position', 'top-right');
+    }
+</script>
+
+<div id="pointsModalDialog" class="modal fade" style="z-index: 1060">
+    <div class="modal-dialog">
+        <div class="modal-content hintsDialogContent1">
+            <div class="modal-header hintsDialogHeader">
+                <h5 class="hintsDialogTitle modal-title"><i class="fa fa-cubes" aria-hidden="true"></i> Award Points</h5>
+                <button type="button" class="close" onClick="closePointsDialog()" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body hintsDialogBody" id="hintsDialogBody">
+
+            </div>
+
+            <div class="modal-footer hintsDialogFooter">
+                <a type="button" class="btn btn-warning btn-sm" style='text-decoration:none !important;'  onClick="closePointsDialog()">Close</a>
+
+                <a type="button" class="btn btn-success btn-sm pull-left" style='text-decoration:none !important;'  target='_blank' href='/secure/taf.jsp'><i class="fa fa-users" aria-hidden="true"></i> Invite Friends</a>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+
+</div>
+
+<div id='supportModalDialog' class='modal fade p-0' style='z-index: 1060'>
+    <div class='modal-content border-warning'>
+        <div class='modal-header card-heading bg-warning' style='padding-bottom: 0;'>
+            <span class='w-100'>
+                <h6 class='modal-title supportDialogTitle1' id='contactLabel'><b>Contact Support</b></h6>
+            </span>
+        </div>
+        <div class='modal-body supportDialogBody text-center' id='supportDialogBody'>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="locationDenyDialog" style="margin-top: 8%">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header btn-primary" style="padding: 10px;">
+                <h4 class="modal-title">Instruction to Unblock Access to Location.</h4>
+            </div>
+            <div class="modal-body" style="background: #fcf8e3;">
+                <div>
+                    <ul>
+                        <li><h4>The portal requires permission  to record the location from which it is being accessed, to minimize your account misuse.</h4></li>
+                        <li><h4>Currently the access to location in the browser is <span class="text-danger"><b>blocked</b></span>.</h4></li>
+                        <li><h4>Follow the instruction in the below <a href="/geolocation-settings-for-C-MF-C.html" target='_blank'>
+                            link</a> to unblock access to location details and click on
+                            <span style="color: darkgreen"><b>refresh</b></span> button.</h4></li>
+                        <li><h4>If you already followed the instructions to unblock and it is still showing this dialog, this may be due to occasional network connectivity problems. Please refresh the page in that case.</h4></li>
+                    </ul>
+
+                    <br/>
+                    <div class="text-center">
+                        <div>
+                            <a href="/geolocation-settings-for-C-MF-C.html" target='_blank'><u><h4><b>Link to Unblock</b></h4></u></a>
+                        </div>
+                        <br/>
+                    </div>
+                    <br/>
+                    <div class="text-center">
+
+                        <a id="close" onclick="_ctReloadPage()" class="btn btn-success btn-xs" data-toggle="modal" style="padding: 0 25px 0 25px;">
+                            <h5>Refresh</h5>
+                        </a>
+                    </div>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="locationPromptDialog" style="margin-top: 8%">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header btn-primary" style="padding: 10px;">
+                <h4 class="modal-title" id="locationFetchTitle">Fetching Location</h4>
+            </div>
+            <div class="modal-body" style="background: #fcf8e3;">
+                <div>
+                    <ul>
+                        <li><h4>The portal requires permission to record the location from which it is being accessed, to minimize your account misuse.</h4></li>
+                        <li id="changeAllowBtnResToBrowser"><h4>Click on <span class="remember-text"></span>
+                            <span><nobr><b class="allow-access-text border-style"></b></nobr></span>
+                            button to access the location, and click on <span style="color: darkgreen"><b>refresh</b></span> button.</h4>
+                        </li>
+                        <div id="showImage"></div><br/><br/>
+                        <div><h4 class="img-info"></h4></div>
+                    </ul>
+                </div>
+                <br/>
+                <div class="text-center">
+
+                    <a id="close" onclick="_ctReloadPage()" class="btn btn-success btn-xs" data-toggle="modal" style="padding: 0 25px 0 25px;">
+                        <h5>Refresh</h5>
+                    </a>
+                </div>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <title>CodeTantra - Teach & Learn Anywhere Platform</title>
+    
+    
+    <script src="/js/custom-min/d.min.js"></script>
+    <script type="text/javascript" src="/js/custom-min/dd.min.js"></script>
+    <script src="/js/custom-min/nommoc.min.js"></script>
+    <script src="/js/custom-min/ifpm.min.js"></script>
+    <script type="text/javascript" src="/js/custom-min/mutils.min.js"></script>
+    
+    <script src="/js/NoSleep.min.js"></script>
+    
+    <style>
+        .loading:after {
+            content: ' .';
+            animation: dots 1s steps(5, end) infinite;
+            font: 300 4em/150% Impact;
+            line-height: 0;
+        }
+
+        @keyframes dots {
+            0%, 20% {
+                color: rgba(0, 0, 0, 0);
+                text-shadow: .25em 0 0 rgba(0, 0, 0, 0),
+                .5em 0 0 rgba(0, 0, 0, 0);
+            }
+            40% {
+                color: white;
+                text-shadow: .25em 0 0 rgba(0, 0, 0, 0),
+                .5em 0 0 rgba(0, 0, 0, 0);
+            }
+            60% {
+                text-shadow: .25em 0 0 white,
+                .5em 0 0 rgba(0, 0, 0, 0);
+            }
+            80%, 100% {
+                text-shadow: .25em 0 0 white,
+                .5em 0 0 white;
+            }
+        }
+        html, body, .hfull {
+                height: 100% !important;
+        }
+    </style>
+</head>
+<body style="padding:0; overflow: hidden;">
+
+<script type="text/javascript">
+    function f() {
+        _ct_d("inMeeting", {m: "890727f8-e756-3c8d-bcbc-eb674eed4172"});
+        mfdumb();
+    }
+
+    f();
+    setInterval(f, 15 * 60000);
+</script>
+<div class="container-fluid hfull">
+    <div id="hideHeader" class="row justify-content-center">
+        <span class="col-auto"><i id="downArrow" class="fa fa-caret-down fixed-top mt-n1"
+                                  style="color:red; position: absolute; z-index: 9999; font-size: 1.5em"
+                                  onclick="showHeader()"></i><i id="upArrow"
+                                                                class="fa fa-chevron-circle-up d-none fixed-top"
+                                                                style="color:red; position: absolute; z-index: 9999; font-size: 1.5em"
+                                                                onclick="removeHeader()"></i></span>
+    </div>
+    
+    
+    <div class="row justify-content-center hfull">
+        
+        <iframe id="frame" frameborder="0" style="height: 100%; width: 100%;" allowfullscreen allowusermedia
+                allow="microphone *;fullscreen *;camera *;geolocation *;midi *;encrypted-media *;autoplay *;display-capture *;clipboard-read *;clipboard-write *;"
+                src="https://dd235.codetantra.com/bigbluebutton/api/join?&userdata-bbb_show_participants_on_login=false&meetingID=890727f8-e756-3c8d-bcbc-eb674eed4172&joinViaHtml5=true&password=1umfhc1up&userdata-bbb_hideRecordingStatus=true&fullName=12212106+-+Mahek+.&userdata-bbb_mirror_own_webcam=true&userID=63159451db103b06ba4acb00&redirect=true&userdata-userJoinPushAlerts=false&checksum=b1c8e01919e9f3fc36ea1683c7791f06490fbd80194de9bfa1231778eaec7e43">
+        </iframe>
+        <script>
+            $("#frame").on("load", function () {
+                try {
+                    var isSea = window.ipcN && window.ipcN.isSeaOnly();
+                    if (isSea) {
+                        window.ipcN.send({
+                            type: 'configSea',
+                            payload: {allowScreenCapture: true, allowAccessToOtherApps: true}
+                        });
+                    }
+                    var isModerator = false;
+                    var allowAutoScreenShareInSeaForMeeting = false;
+                    var allowAutoVideoShareInMeeting = false;
+                    var isBBBVideoConnected = false;
+                    var isBBBAudioConnected = false;
+                    var autoScreenShareCount = 0;
+                    var autoVideoShareCount = 0;
+                    function onMessageReceiveFromBBB(event) {
+                        if (event.data && event.data.response) {
+                            var type = event.data.response.type;
+                            if (type === "CT_SCREEN_SHARE_STARTED") {
+                                window.removeEventListener("message", onMessageReceiveFromBBB);
+                                return;
+                            } else if (type === "CT_SCREEN_SHARE_STOPPED") {
+                                if (autoScreenShareCount && autoScreenShareCount <= 3) {
+                                    ifpm.cie('#frame', 'button[aria-label="Share your screen"]');
+                                    autoScreenShareCount++;
+                                } else if (autoScreenShareCount > 3) {
+                                    window.removeEventListener("message", onMessageReceiveFromBBB);
+                                    return ;
+                                }
+                            }
+                        }
+                        if (event.data && event.data.audioConnectionStatus) {
+                            isBBBAudioConnected = event.data.audioConnectionStatus === "connected";
+                        }
+                        if (event.data && event.data.webCamStatus) {
+                            isBBBVideoConnected = event.data.webCamStatus === "connected";
+                        }
+                        let connected = isBBBAudioConnected || isBBBVideoConnected;
+                        if (connected) {
+                            if (allowAutoScreenShareInSeaForMeeting && !autoScreenShareCount && isSea) {
+                                ifpm.cie('#frame', 'button[aria-label="Share your screen"]');
+                                autoScreenShareCount++;
+                            }
+                            if (allowAutoVideoShareInMeeting && !autoVideoShareCount) {
+                                ifpm.cie('#frame', 'button[aria-label="Share webcam"]');
+                                if (!allowAutoScreenShareInSeaForMeeting) {
+                                    window.removeEventListener("message", onMessageReceiveFromBBB);
+                                }
+                                autoVideoShareCount++;
+                            }
+                        }
+                    }
+                    if (isModerator && (allowAutoScreenShareInSeaForMeeting || allowAutoVideoShareInMeeting)) {
+                        setTimeout(function () {
+                            window.removeEventListener("message", onMessageReceiveFromBBB);
+                        }, 120000);
+                        window.addEventListener('message', onMessageReceiveFromBBB);
+                    }
+                } catch (e) {
+                    console.dir(e);
+                }
+            });
+        </script>
+    </div>
+    
+    
+</div>
+
+</body>
+<script>
+    var $navBar = $(".navbar");
+    var $iframe = $("#frame");
+    var $up = $("#upArrow");
+    var $down = $("#downArrow");
+
+    $navBar.css('visibility', 'hidden');
+
+    function showHeader() {
+        $navBar.css('visibility', 'visible');
+        $navBar.css('opacity', '1');
+        $navBar.css('-webkit-transition', 'opacity 1s, visibility 1s');
+        $navBar.css("transition", "opacity 1s, visibility 1s");
+        $up.removeClass('d-none');
+        $down.addClass('d-none');
+        // $iframe.css('margin-top', $navBar.height() + "px");
+        $iframe.css("transition", "margin-top 1s");
+    }
+
+    function removeHeader() {
+        $navBar.css('opacity', '0');
+        $navBar.css('visibility', 'hidden');
+        $navBar.css('-webkit-transition', 'opacity 1s, visibility 1s');
+        $navBar.css("transition", "opacity 1s, visibility 1s");
+        $down.removeClass('d-none');
+        $up.addClass('d-none');
+        // $iframe.css('margin-top', '');
+        $iframe.css("transition", "margin-top 1s");
+    }
+
+    
+
+        
+        $(document).ready(function () {
+            var noSleep = new NoSleep();
+            noSleep.enable();
+            history.pushState(null, document.title, location.href);
+            var confirmLeave = true;
+            window.addEventListener('popstate', function () {
+                history.pushState(null, document.title, location.href);
+                if (!confirmLeave) {
+                    confirmLeave = true;
+                    return;
+                }
+                alertify.defaults.theme.ok = "btn btn-sm btn-outline-dark";
+                alertify.defaults.theme.cancel = "btn btn-sm btn-outline-dark";
+                alertify.defaults.theme.input = "form-control";
+                alertify.confirm('<p style="font-size: 14px;">If you want to leave the meeting, please click on Leave Meeting.</p>').setHeader('<h5 style="color: white;" class="m-0">Are you sure?</h5>')
+                    .set({
+                        transition: 'zoom',
+                        labels: {
+                            ok: "Leave Meeting",
+                            cancel: "Stay Back"
+                        },
+                        closable: false,
+                        defaultFocus: 'cancel',
+                        movable: false,
+                        closableByDimmer: false,
+                        invokeOnCloseOff: true,
+                        onok: function () {
+                            window.location.replace('/secure/tla/m.jsp');
+                        },
+                        oncancel: function () {
+                            confirmLeave = false;
+                            history.go(-1);
+                        }
+                    });
+                $(".ajs-header").css("padding", "4px").addClass("bg-dark");
+            });
+        });
+    
+</script>
+
