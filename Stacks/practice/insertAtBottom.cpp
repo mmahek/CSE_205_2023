@@ -2,6 +2,7 @@
 #include<stack>
 using namespace std;
 
+
 void insertAtBottom(stack<int> &iStack, int x){
     //base case
     if(iStack.empty()){
@@ -14,6 +15,7 @@ void insertAtBottom(stack<int> &iStack, int x){
     iStack.push(n);
 }
 int main(){
+    cout << "First question totally solved by me!" << endl;
     stack<int> s;
     s.push(1);//at bottom of stack s
     s.push(2);
