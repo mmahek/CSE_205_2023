@@ -65,11 +65,11 @@ bool isValid(string s){
     return true;
 }
 int main(){
-    string s = "[({()})]";
+    string s = "[]";
     if(isValid(s) == true){//it can be false as well or !isValid(s)
         cout << "IsValid" << endl;
     }
-    else{
+    else if(isValid(s) == false){
         cout << "Invalid" << endl;
     }
     return 0;
