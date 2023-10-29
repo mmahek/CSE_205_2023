@@ -2,6 +2,9 @@
 #include<stack>
 using namespace std;
 
+/*
+    Time Complexity is O(n);
+    Space Complexity is O(n) */
 
 void insertAtBottom(stack<int> &iStack, int x){
     //base case
