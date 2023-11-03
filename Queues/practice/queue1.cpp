@@ -2,53 +2,32 @@
 #include<queue>
 using namespace std;
 /*
+    Queue is a data structure which has firts in first out - FIFO system
+    - When pushed, it takes place on rear part of queue
+    - When poped, it is done from front part of queue
+*/
 int main(){
     queue<int> q;
-    //operations
+    q.push(3);
+    q.push(5);
+    q.push(-8);
+    cout << "Front : " << q.front() << endl;
+    q.push(-6);
+    cout << "Back : " << q.back() << endl;
+    q.push(44);
     
-    push : q.push(17);
-    pop/dqueue : q.pop();
-    size : q.size();
-    isEmpty : q.empty();
-    front element : q.front();
-    
-   q.push(11);
-   cout << "Front : " << q.front() << endl;
-   q.push(15);
-   cout << "Front : " << q.front() << endl;
 
-   cout << "Size : " << q.size() << endl;
-   q.pop();
-   cout << "Size : " << q.size() << endl;
-   if(q.empty()){
-    cout << "Queue is empty" << endl;
-   }
-   else{
-    cout << "Queue is empty" << endl;
-   }
+    cout << "Size : " << q.size() << endl;
+    q.pop();
+    cout << "Size : " << q.size() << endl;
+    q.pop();
+    
+    if(q.empty()){
+        cout <<  "Empty" << endl;
+    }
+    else{
+        cout << "Not Empty" << endl;
+    }
+
     return 0;
 }
-*/
-
-//Implement using array
-class Queue{
-
-    //constructor
-    Queue(int size){
-
-    }
-
-    void push(){
-        //push takes place on rear
-
-    }
-
-    void pop(){
-        //queue is empty if front  == rear
-        //pop always takes place from front
-    }
-
-    void front(){
-
-    }
-};

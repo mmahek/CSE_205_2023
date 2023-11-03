@@ -65,7 +65,7 @@ int main(){
         t.pop();
     }
     sortStack(st);
-    cout << "After sorting: ";
+    cout << "\nAfter sorting: ";
     while(!st.empty()){
         cout << st.top() << " ";
         st.pop();
